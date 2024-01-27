@@ -10,7 +10,7 @@ db.uri = dbconfig.uri;
 /* 
     ADD models here:
     ex:
-    db.model = require('./model.js')(mongoose); 
+    db.model_name = require('./model_name.js')(mongoose); 
 */
 
 module.exports = db;
