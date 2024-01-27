@@ -2,7 +2,7 @@ const routes = require('express').Router();
 const record = require('../controllers/adoption_record');
 
 routes.get('/', record.findAll); // add controller
-routes.get('/completed', record.findAllCompleted); // add controller
+routes.get('/complete', record.findAllComplete); // add controller
 routes.get('/incomplete', record.findAllIncomplete); // add controller
 routes.get('/:adoption_id', record.findOne); // add controller
 
