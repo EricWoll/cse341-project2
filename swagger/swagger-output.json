@@ -292,6 +292,9 @@
               }
             }
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -521,6 +524,9 @@
               }
             }
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -714,6 +720,9 @@
               }
             }
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -832,6 +841,9 @@
                 "name": "main"
               }
             }
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error",
@@ -1132,6 +1144,9 @@
               }
             }
           },
+          "412": {
+            "description": "Precondition Failed"
+          },
           "500": {
             "description": "Internal Server Error",
             "schema": {
@@ -1250,6 +1265,9 @@
                 "name": "main"
               }
             }
+          },
+          "412": {
+            "description": "Precondition Failed"
           },
           "500": {
             "description": "Internal Server Error",
