@@ -5,7 +5,7 @@ const doc = {
         title: 'Adoption API',
         description: 'Holds Household, Animal, and Adoption records',
     },
-    host: 'localhost:3000',
+    host: 'https://cse341-project2-dipb.onrender.com',
     definitions: {
         adoptionRecord: {
             adoption_id: '65146',
