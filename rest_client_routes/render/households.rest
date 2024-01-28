@@ -1,0 +1,38 @@
+### Gets all Household Records
+GET https://cse341-project2-dipb.onrender.com/households
+
+### Gets single Household Record
+GET https://cse341-project2-dipb.onrender.com/households/record/78413
+
+### Gets all Completed Household Records
+GET https://cse341-project2-dipb.onrender.com/households/complete
+
+### Gets all Incompleted Household Records
+GET https://cse341-project2-dipb.onrender.com/households/incomplete
+
+### Creates an Household Record
+POST https://cse341-project2-dipb.onrender.com/households/record HTTP/1.1
+Content-Type: application/json
+
+{
+    "household_id": "54654",
+    "last_name": "some name",
+    "people_amount": 4,
+    "current_pets": ["some animal"],
+    "paperwork_complete": false
+}
+
+### Updates an Household Record
+PUT https://cse341-project2-dipb.onrender.com/households/record/54654 HTTP/1.1
+Content-Type: application/json
+
+{
+    "household_id": "54654",
+    "last_name": "some name",
+    "people_amount": 4,
+    "current_pets": ["some animal"],
+    "paperwork_complete": true
+}
+
+### Deleted an Household Record
+DELETE https://cse341-project2-dipb.onrender.com/households/record/54654

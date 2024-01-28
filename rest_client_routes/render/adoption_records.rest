@@ -1,0 +1,50 @@
+### Gets all Adoption Records
+GET https://cse341-project2-dipb.onrender.com/adoption-records
+
+### Gets single Adoption Record
+GET https://cse341-project2-dipb.onrender.com/adoption-records/record/65146
+
+### Gets all Completed Adoption Records
+GET https://cse341-project2-dipb.onrender.com/adoption-records/complete
+
+### Gets all Incompleted Adoption Records
+GET https://cse341-project2-dipb.onrender.com/adoption-records/incomplete
+
+### Gets single Animal Record in collection
+GET https://cse341-project2-dipb.onrender.com/adoption-records/animal/49365
+
+### Gets single Household Record in collection
+GET https://cse341-project2-dipb.onrender.com/adoption-records/household/465616
+
+### Creates an Adoption Record
+POST https://cse341-project2-dipb.onrender.com/adoption-records/record HTTP/1.1
+Content-Type: application/json
+
+{
+    "adoption_id": "1326514",
+    "animal_id": "58589",
+    "household_id": "32321",
+    "adoption_complete": false,
+    "adoption_date": "10/22/2024"
+}
+
+### Check created
+GET https://cse341-project2-dipb.onrender.com/adoption-records/record/1326514
+
+### Updates an Adoption Record
+PUT https://cse341-project2-dipb.onrender.com/adoption-records/record/1326514 HTTP/1.1
+Content-Type: application/json
+
+{
+    "adoption_id": "1326514",
+    "animal_id": "58589",
+    "household_id": "32321",
+    "adoption_complete": true,
+    "adoption_date": "10/22/2024"
+}
+
+### Check update
+GET https://cse341-project2-dipb.onrender.com/adoption-records/record/1326514
+
+### Deleted an Adoption Record
+DELETE https://cse341-project2-dipb.onrender.com/adoption-records/record/1326514

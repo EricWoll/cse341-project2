@@ -6,6 +6,7 @@ const doc = {
         description: 'Holds Household, Animal, and Adoption records',
     },
     host: 'https://cse341-project2-dipb.onrender.com',
+    schemes: ['https', 'http'],
     definitions: {
         adoptionRecord: {
             adoption_id: '65146',
