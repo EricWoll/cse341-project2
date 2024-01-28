@@ -248,20 +248,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Adoption Record updated successfully."
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -328,20 +316,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Adoption Record deleted successfully."
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
+          "204": {
+            "description": "No Content"
           },
           "404": {
             "description": "Not Found",
@@ -504,11 +480,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/adoptionRecord"
-            }
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -524,6 +497,9 @@
                 "name": "main"
               }
             }
+          },
+          "404": {
+            "description": "Not Found"
           },
           "412": {
             "description": "Precondition Failed"
@@ -676,20 +652,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Animal Record updated successfully."
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -756,20 +720,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Animal Record deleted successfully."
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
+          "204": {
+            "description": "No Content"
           },
           "404": {
             "description": "Not Found",
@@ -822,11 +774,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/animalRecord"
-            }
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -842,6 +791,9 @@
                 "name": "main"
               }
             }
+          },
+          "404": {
+            "description": "Not Found"
           },
           "412": {
             "description": "Precondition Failed"
@@ -1100,20 +1052,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Household Record updated successfully."
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            }
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -1181,7 +1121,6 @@
         ],
         "responses": {
           "200": {
-            "description": "OK",
             "schema": {
               "type": "object",
               "properties": {
@@ -1193,7 +1132,11 @@
               "xml": {
                 "name": "main"
               }
-            }
+            },
+            "description": "OK"
+          },
+          "204": {
+            "description": "No Content"
           },
           "404": {
             "description": "Not Found",
@@ -1246,11 +1189,8 @@
           }
         ],
         "responses": {
-          "200": {
-            "description": "OK",
-            "schema": {
-              "$ref": "#/definitions/householdRecord"
-            }
+          "204": {
+            "description": "No Content"
           },
           "400": {
             "description": "Bad Request",
@@ -1266,6 +1206,9 @@
                 "name": "main"
               }
             }
+          },
+          "404": {
+            "description": "Not Found"
           },
           "412": {
             "description": "Precondition Failed"

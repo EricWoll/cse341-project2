@@ -10,9 +10,6 @@ exports.create = (req, res) => {
             required: true,
             schema: { $ref: '#/definitions/householdRecord' }
         }
-        #swagger.responses[200] = {
-            schema: { $ref: '#/definitions/householdRecord'}
-        }
         #swagger.responses[400] = {
             schema: { message: `Content can not be empty!`}
         }
@@ -36,7 +33,13 @@ exports.create = (req, res) => {
     house
         .save(house)
         .then((data) => {
-            res.send(data);
+            if (!data) {
+                res.status(404).send({
+                    message: `Error creating an Household Record.`,
+                });
+            } else {
+                res.status(204).send();
+            }
         })
         .catch((error) => {
             res.status(500).send({
@@ -198,9 +201,6 @@ exports.update = (req, res) => {
             required: true,
             schema: { $ref: '#/definitions/householdRecord' }
         }
-        #swagger.responses[200] = {
-            schema: { message: `Household Record updated successfully.`}
-        }
         #swagger.responses[400] = {
             schema: { message: 'Updated data cannot be empty!' }
         }
@@ -232,9 +232,7 @@ exports.update = (req, res) => {
                     message: `No Household paperwork Record found.`,
                 });
             } else {
-                res.send({
-                    message: `Household paperwork Record updated successfully.`,
-                });
+                res.status(204).send();
             }
         })
         .catch((error) => {
@@ -268,9 +266,7 @@ exports.delete = (req, res) => {
                     message: `No Household paperwork Record found.`,
                 });
             } else {
-                res.send({
-                    message: `Household paperwork Record deleted successfully.`,
-                });
+                res.status(204).send();
             }
         })
         .catch((error) => {

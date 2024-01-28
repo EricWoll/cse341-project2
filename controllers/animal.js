@@ -11,9 +11,6 @@ exports.create = (req, res) => {
             required: true,
             schema: { $ref: '#/definitions/animalRecord' }
         }
-        #swagger.responses[200] = {
-            schema: { $ref: '#/definitions/animalRecord'}
-        }
         #swagger.responses[400] = {
             schema: { message: `Content can not be empty!`}
         }
@@ -39,7 +36,13 @@ exports.create = (req, res) => {
     animal
         .save(animal)
         .then((data) => {
-            res.send(data);
+            if (!data) {
+                res.status(404).send({
+                    message: `Error creating an Animal Record.`,
+                });
+            } else {
+                res.status(204).send();
+            }
         })
         .catch((error) => {
             res.status(500).send({
@@ -138,9 +141,6 @@ exports.update = (req, res) => {
             required: true,
             schema: { $ref: '#/definitions/animalRecord'}
         }
-        #swagger.responses[200] = {
-            schema: { message: `Animal Record updated successfully.`}
-        }
         #swagger.responses[400] = {
             schema: { message: 'Updated data cannot be empty!' }
         }
@@ -172,7 +172,7 @@ exports.update = (req, res) => {
             if (!data) {
                 res.status(404).send({ message: `No Animal Record found.` });
             } else {
-                res.send({ message: `Animal Record updated successfully.` });
+                res.status(204).send();
             }
         })
         .catch((error) => {
@@ -188,9 +188,6 @@ exports.delete = (req, res) => {
     /*
         #swagger.summary = 'Deletes an Animal Record'
         #swagger.tags=['Animal Records']
-        #swagger.responses[200] = {
-            schema: { message: `Animal Record deleted successfully.`}
-        }
         #swagger.responses[404] = {
             schema: { message: `No Animal Record found for id of [animal_id].`}
         }
@@ -204,7 +201,7 @@ exports.delete = (req, res) => {
             if (!data) {
                 res.status(404).send({ message: `No Animal Record found.` });
             } else {
-                res.send({ message: `Animal Record deleted successfully.` });
+                res.status(204).send();
             }
         })
         .catch((error) => {

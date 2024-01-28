@@ -11,9 +11,6 @@ exports.create = (req, res) => {
             required: true,
             schema: { $ref: '#/definitions/adoptionRecord' }
         }
-        #swagger.responses[200] = {
-            schema: { $ref: '#/definitions/adoptionRecord' }
-        }
         #swagger.responses[400] = {
             schema: { message: `Content can not be empty!` }
         }
@@ -37,7 +34,13 @@ exports.create = (req, res) => {
     record
         .save(record)
         .then((data) => {
-            res.send(data);
+            if (!data) {
+                res.status(404).send({
+                    message: `Error creating an Adoption Record.`,
+                });
+            } else {
+                res.status(204).send();
+            }
         })
         .catch((error) => {
             res.status(500).send({
@@ -268,9 +271,6 @@ exports.update = (req, res) => {
             required: true,
             schema: {$ref: '#/definitions/adoptionRecord'}
         }
-        #swagger.responses[200] = {
-            schema: { message: `Adoption Record updated successfully.`}
-        }
         #swagger.responses[400] = {
             schema: { message: 'Updated data cannot be empty!' }
         }
@@ -301,7 +301,7 @@ exports.update = (req, res) => {
                     message: `No Adoption Record found for id of ${record.adoption_id}.`,
                 });
             } else {
-                res.send({ message: `Adoption Record updated successfully.` });
+                res.status(204).send();
             }
         })
         .catch((error) => {
@@ -317,9 +317,6 @@ exports.delete = (req, res) => {
     /*
         #swagger.summary = 'Deletes an Adoption Record'
         #swagger.tags=['Adoption Records']
-        #swagger.responses[200] = {
-            schema: { message: `Adoption Record deleted successfully.`}
-        }
         #swagger.responses[404] = {
             schema: { message: `No Adoption Record found for id of [adoption_id].`}
         }
@@ -335,7 +332,7 @@ exports.delete = (req, res) => {
                     message: `No Adoption Record found for id of ${adoption_id}.`,
                 });
             } else {
-                res.send({ message: `Adoption Record deletedy successfully.` });
+                res.status(204).send();
             }
         })
         .catch((error) => {
