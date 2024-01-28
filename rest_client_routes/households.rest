@@ -1,0 +1,38 @@
+### Gets all Household Records
+GET http://localhost:3000/households
+
+### Gets single Household Record
+GET http://localhost:3000/households/record/78413
+
+### Gets all Completed Household Records
+GET http://localhost:3000/households/complete
+
+### Gets all Incompleted Household Records
+GET http://localhost:3000/households/incomplete
+
+### Creates an Household Record
+POST http://localhost:3000/households/record HTTP/1.1
+Content-Type: application/json
+
+{
+    "household_id": "54654",
+    "last_name": "some name",
+    "people_amount": 4,
+    "current_pets": ["some animal"],
+    "paperwork_complete": false
+}
+
+### Updates an Household Record
+PUT http://localhost:3000/households/record/54654 HTTP/1.1
+Content-Type: application/json
+
+{
+    "household_id": "54654",
+    "last_name": "some name",
+    "people_amount": 4,
+    "current_pets": ["some animal"],
+    "paperwork_complete": true
+}
+
+### Deleted an Household Record
+DELETE http://localhost:3000/households/record/54654

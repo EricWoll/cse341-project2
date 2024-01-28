@@ -17,12 +17,9 @@ process.on('uncaughtException', (err, origin) => {
 });
 
 db.mongoose
-    .connect(db.url, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
+    .connect(db.uri)
     .then(() => {
-        console.log('Connected to databse...');
+        console.log('Connected to databse');
     })
     .catch((error) => {
         console.log('Cannot connect to Database...', error);

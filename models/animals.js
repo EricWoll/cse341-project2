@@ -1,6 +1,6 @@
 module.exports = (mongoose) => {
     const animal = mongoose.model(
-        'animal',
+        'animals',
         mongoose.Schema(
             {
                 animal_id: String,

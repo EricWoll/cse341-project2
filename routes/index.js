@@ -4,14 +4,10 @@ const adoption_record = require('./adoption_record');
 const animal = require('./animal');
 const household = require('./household');
 
-routes.use('/adoption_records', adoption_record);
-routes.use('/animals', animal); // meed to complete Routes
-routes.use('/household', household); // meed to complete Routes
+routes.use('/adoption-records', adoption_record);
+routes.use('/animals', animal);
+routes.use('/households', household);
 
-const swagger = require('swagger-ui-express');
-const swaggerDoc = require('../swagger/swagger-output.json');
-
-routes.use('/api-docs', swagger.serve);
-routes.get('/api-docs', swagger.setup(swaggerDoc));
+routes.use('/', require('./api-docs'));
 
 module.exports = routes;

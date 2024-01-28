@@ -1,0 +1,47 @@
+[
+    {
+        "animal_id": "321654",
+        "name": "Harley",
+        "type": "dog",
+        "size": "5 ft",
+        "weight": "25 lbs",
+        "has_chip": true,
+        "medications": []
+    },
+    {
+        "animal_id": "49365",
+        "name": "Roel",
+        "type": "cat",
+        "size": "2 ft",
+        "weight": "15 lbs",
+        "has_chip": true,
+        "medications": []
+    },
+    {
+        "animal_id": "84621",
+        "name": "Lindsey",
+        "type": "lizard",
+        "size": "1 ft",
+        "weight": "0.5 lbs",
+        "has_chip": false,
+        "medications": []
+    },
+    {
+        "animal_id": "368651",
+        "name": "Rame",
+        "type": "dog",
+        "size": "4 ft",
+        "weight": "30 lbs",
+        "has_chip": false,
+        "medications": []
+    },
+    {
+        "animal_id": "532165",
+        "name": "Meyo",
+        "type": "cat",
+        "size": "2.5 ft",
+        "weight": "20 lbs",
+        "has_chip": true,
+        "medications": []
+    }
+]

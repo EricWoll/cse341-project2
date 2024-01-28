@@ -1,15 +1,20 @@
 const routes = require('express').Router();
 const record = require('../controllers/adoption_record');
 
-routes.get('/', record.findAll); // add controller
-routes.get('/complete', record.findAllComplete); // add controller
-routes.get('/incomplete', record.findAllIncomplete); // add controller
-routes.get('/:adoption_id', record.findOne); // add controller
+const validator = require('../validation/validate.adoption-records');
 
-routes.post('/', record.create);
+routes.get('/', record.findAll);
+routes.get('/complete', record.findAllComplete);
+routes.get('/incomplete', record.findAllIncomplete);
+routes.get('/record/:adoption_id', record.findOne);
 
-routes.put('/', record.update); // add controller
+routes.get('/animal/:animal_id', record.findAnimal);
+routes.get('/household/:household_id', record.findHousehold);
 
-routes.delete('/', record.delete); // add controller
+routes.post('/record', validator.saveAdoptionRecord, record.create);
+
+routes.put('/record/:adoption_id', validator.saveAdoptionRecord, record.update);
+
+routes.delete('/record/:adoption_id', record.delete);
 
 module.exports = routes;

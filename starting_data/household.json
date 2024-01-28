@@ -1,0 +1,37 @@
+[
+    {
+        "household_id": "987654",
+        "last_name": "Lowel",
+        "people_amount": 5,
+        "current_pets": ["dog", "cat"],
+        "paperwork_complete": false
+    },
+    {
+        "household_id": "78413",
+        "last_name": "Vinder",
+        "people_amount": 4,
+        "current_pets": ["dog"],
+        "paperwork_complete": false
+    },
+    {
+        "household_id": "266986",
+        "last_name": "Camdel",
+        "people_amount": 1,
+        "current_pets": ["lizard"],
+        "paperwork_complete": true
+    },
+    {
+        "household_id": "465616",
+        "last_name": "Elact",
+        "people_amount": 1,
+        "current_pets": [],
+        "paperwork_complete": true
+    },
+    {
+        "household_id": "36514",
+        "last_name": "Whaol",
+        "people_amount": 2,
+        "current_pets": [],
+        "paperwork_complete": true
+    }
+]

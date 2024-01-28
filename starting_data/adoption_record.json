@@ -1,0 +1,37 @@
+[
+    {
+        "adoption_id": "65146",
+        "animal_id": "321654",
+        "household_id": "987654",
+        "adoption_complete": false,
+        "adoption_date": "10/22/2024"
+    },
+    {
+        "adoption_id": "6548",
+        "animal_id": "49365",
+        "household_id": "78413",
+        "adoption_complete": false,
+        "adoption_date": "8/16/2024"
+    },
+    {
+        "adoption_id": "6584",
+        "animal_id": "84621",
+        "household_id": "266986",
+        "adoption_complete": false,
+        "adoption_date": "5/1/2024"
+    },
+    {
+        "adoption_id": "32165",
+        "animal_id": "368651",
+        "household_id": "465616",
+        "adoption_complete": true,
+        "adoption_date": "10/22/2024"
+    },
+    {
+        "adoption_id": "7894",
+        "animal_id": "532165",
+        "household_id": "36514",
+        "adoption_complete": true,
+        "adoption_date": "1/3/2002"
+    }
+]

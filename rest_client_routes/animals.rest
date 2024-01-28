@@ -1,0 +1,36 @@
+### Gets all Animal Records
+GET http://localhost:3000/animals
+
+### Gets single Animal Record
+GET http://localhost:3000/animals/record/321654
+
+### Creates an Animal Record
+POST http://localhost:3000/animals/record HTTP/1.1
+Content-Type: application/json
+
+{
+    "animal_id": "65487",
+    "name": "some name",
+    "type": "some type",
+    "size": "some height",
+    "weight": "some weight",
+    "has_chip": false,
+    "medications": []
+}
+
+### Updates an Animal Record
+PUT http://localhost:3000/animals/record/65487 HTTP/1.1
+Content-Type: application/json
+
+{
+    "animal_id": "65487",
+    "name": "some name",
+    "type": "some type",
+    "size": "some height",
+    "weight": "some weight",
+    "has_chip": true,
+    "medications": ["some medication"]
+}
+
+### Deleted an Animal Record
+DELETE http://localhost:3000/animals/record/65487

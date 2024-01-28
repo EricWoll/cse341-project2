@@ -1,6 +1,6 @@
 module.exports = (mongoose) => {
     const household = mongoose.model(
-        'household',
+        'households',
         mongoose.Schema(
             {
                 household_id: String,
