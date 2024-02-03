@@ -5,13 +5,42 @@
     "description": "Holds Household, Animal, and Adoption records",
     "version": "1.0.0"
   },
-  "host": "https://cse341-project2-dipb.onrender.com",
+  "host": [
+    "cse341-project2-dipb.onrender.com"
+  ],
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "paths": {
+    "/login": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Logs the User in",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/logout": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Logs the User out",
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/adoption-records/": {
       "get": {
         "tags": [
@@ -266,6 +295,12 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
+            }
+          },
           "404": {
             "description": "Not Found",
             "schema": {
@@ -318,6 +353,12 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
+            }
           },
           "404": {
             "description": "Not Found",
@@ -498,6 +539,12 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
+            }
+          },
           "404": {
             "description": "Not Found"
           },
@@ -670,6 +717,12 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
+            }
+          },
           "404": {
             "description": "Not Found",
             "schema": {
@@ -722,6 +775,12 @@
         "responses": {
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
+            }
           },
           "404": {
             "description": "Not Found",
@@ -790,6 +849,12 @@
               "xml": {
                 "name": "main"
               }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
             }
           },
           "404": {
@@ -1070,6 +1135,12 @@
               }
             }
           },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
+            }
+          },
           "404": {
             "description": "Not Found",
             "schema": {
@@ -1120,23 +1191,14 @@
           }
         ],
         "responses": {
-          "200": {
-            "schema": {
-              "type": "object",
-              "properties": {
-                "message": {
-                  "type": "string",
-                  "example": "Household Record deleted successfully."
-                }
-              },
-              "xml": {
-                "name": "main"
-              }
-            },
-            "description": "OK"
-          },
           "204": {
             "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
+            }
           },
           "404": {
             "description": "Not Found",
@@ -1205,6 +1267,12 @@
               "xml": {
                 "name": "main"
               }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/notAuthed"
             }
           },
           "404": {
@@ -1337,6 +1405,15 @@
         "paperwork_complete": {
           "type": "boolean",
           "example": false
+        }
+      }
+    },
+    "notAuthed": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "example": "You do not have access!"
         }
       }
     }

@@ -14,6 +14,9 @@ exports.create = (req, res) => {
         #swagger.responses[400] = {
             schema: { message: `Content can not be empty!` }
         }
+        #swagger.responses[401] = {
+            schema: {$ref: '#/definitions/notAuthed' }
+        }
         #swagger.responses[500] = {
             schema: { message: `Some error occurred while creating an Adopotion Record for id of [adoption_id].`}
         }
@@ -274,6 +277,9 @@ exports.update = (req, res) => {
         #swagger.responses[400] = {
             schema: { message: 'Updated data cannot be empty!' }
         }
+        #swagger.responses[401] = {
+            schema: {$ref: '#/definitions/notAuthed'}
+        }
         #swagger.responses[404] = {
             schema: { message: `No Adoption Record found for id of [adoption_id].`}
         }
@@ -317,6 +323,9 @@ exports.delete = (req, res) => {
     /*
         #swagger.summary = 'Deletes an Adoption Record'
         #swagger.tags=['Adoption Records']
+        #swagger.responses[401] = {
+            schema: {$ref: '#/definitions/notAuthed' }
+        }
         #swagger.responses[404] = {
             schema: { message: `No Adoption Record found for id of [adoption_id].`}
         }

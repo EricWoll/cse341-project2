@@ -5,8 +5,8 @@ const doc = {
         title: 'Adoption API',
         description: 'Holds Household, Animal, and Adoption records',
     },
-    host: 'https://cse341-project2-dipb.onrender.com',
-    schemes: ['https', 'http'],
+    host: ['cse341-project2-dipb.onrender.com'],
+    schemes: ['https'],
     definitions: {
         adoptionRecord: {
             adoption_id: '65146',
@@ -30,6 +30,9 @@ const doc = {
             people_amount: 4,
             current_pets: ['some animal'],
             paperwork_complete: false,
+        },
+        notAuthed: {
+            message: `You do not have access!`,
         },
     },
 };

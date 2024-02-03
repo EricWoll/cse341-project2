@@ -13,6 +13,9 @@ exports.create = (req, res) => {
         #swagger.responses[400] = {
             schema: { message: `Content can not be empty!`}
         }
+        #swagger.responses[401] = {
+            schema: {$ref: '#/definitions/notAuthed'}
+        }
         #swagger.responses[500] = {
             schema: { message: `Some error occurred while creating an Household Record for id of [household_id].`}
         }
@@ -204,6 +207,9 @@ exports.update = (req, res) => {
         #swagger.responses[400] = {
             schema: { message: 'Updated data cannot be empty!' }
         }
+        #swagger.responses[401] = {
+            schema: {$ref: '#/definitions/notAuthed'}
+        }
         #swagger.responses[404] = {
             schema: { message: `No Household Record found for id of [household_id].`}
         }
@@ -248,8 +254,8 @@ exports.delete = (req, res) => {
     /*
         #swagger.summary = 'Deletes a Household Record'
         #swagger.tags=['Household Records']
-        #swagger.responses[200] = {
-            schema: { message: `Household Record deleted successfully.`}
+        #swagger.responses[401] = {
+            schema: {$ref: '#/definitions/notAuthed'}
         }
         #swagger.responses[404] = {
             schema: { message: `No Household Record found for id of [household_id].`}
